@@ -1,0 +1,22 @@
+// register --done
+// resend otp --done
+// verifyRegistration --done
+// login --done
+// change password --done
+// getProfile --done
+// forgot password --done
+// updateDetails
+// updateProfilePic
+
+// create group -- done
+// edit group -- done
+// get group -- done
+// get_groups_locations -- done
+// post_group_locations -- done 
+
+
+
+// frontend
+// check_for_friends_nearby
+// check_for_family_nearby
+// notify_nearby_friends
