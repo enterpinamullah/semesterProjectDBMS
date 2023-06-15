@@ -1,7 +1,9 @@
-// Import the MedicationKnowledge model
+
+
 const { MedicationKnowledge } = require('../../models');
 
-// Get all medication knowledge
+
+
 exports.getAllMedicationKnowledge = async (req, res) => {
   try {
     const medicationKnowledge = await MedicationKnowledge.findAll();
@@ -12,7 +14,8 @@ exports.getAllMedicationKnowledge = async (req, res) => {
   }
 };
 
-// Get medication knowledge by ID
+
+
 exports.getMedicationKnowledgeById = async (req, res) => {
   const { medicationKnowledgeId } = req.params;
   try {
@@ -27,7 +30,8 @@ exports.getMedicationKnowledgeById = async (req, res) => {
   }
 };
 
-// Create a new medication knowledge
+
+
 exports.createMedicationKnowledge = async (req, res) => {
   const { name, status, price } = req.body;
   try {
@@ -39,7 +43,8 @@ exports.createMedicationKnowledge = async (req, res) => {
   }
 };
 
-// Update an existing medication knowledge
+
+
 exports.updateMedicationKnowledge = async (req, res) => {
   const { medicationKnowledgeId } = req.params;
   const { name, status, price } = req.body;
@@ -56,7 +61,8 @@ exports.updateMedicationKnowledge = async (req, res) => {
   }
 };
 
-// Delete a medication knowledge
+
+
 exports.deleteMedicationKnowledge = async (req, res) => {
   const { medicationKnowledgeId } = req.params;
   try {

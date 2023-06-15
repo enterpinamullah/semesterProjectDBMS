@@ -1,7 +1,5 @@
-// Import the Procedure model
-const { Procedures } = require('../../models');
 
-// Get all procedures
+const { Procedures } = require('../../models');
 exports.getAllProcedures = async (req, res) => {
   try {
     const procedures = await Procedures.findAll();
@@ -12,7 +10,8 @@ exports.getAllProcedures = async (req, res) => {
   }
 };
 
-// Get procedure by ID
+
+
 exports.getProcedureById = async (req, res) => {
   const { procedureId } = req.params;
   try {
@@ -43,7 +42,8 @@ exports.getProcedureByPatientId = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-// Create a new procedure
+
+
 exports.createProcedure = async (req, res) => {
   const { name, description } = req.body;
   try {
@@ -55,7 +55,8 @@ exports.createProcedure = async (req, res) => {
   }
 };
 
-// Update an existing procedure
+
+
 exports.updateProcedure = async (req, res) => {
   const { procedureId } = req.params;
   const { name, description } = req.body;
@@ -72,7 +73,8 @@ exports.updateProcedure = async (req, res) => {
   }
 };
 
-// Delete a procedure
+
+
 exports.deleteProcedure = async (req, res) => {
   const { procedureId } = req.params;
   try {

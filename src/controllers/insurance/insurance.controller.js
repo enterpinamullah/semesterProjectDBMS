@@ -1,7 +1,9 @@
-// Import the Insurance model
+
+
 const { Insurance } = require('../../models');
 
-// Get all insurances
+
+
 exports.getAllInsurances = async (req, res) => {
   try {
     const insurances = await Insurance.findAll();
@@ -12,7 +14,8 @@ exports.getAllInsurances = async (req, res) => {
   }
 };
 
-// Get insurance by ID
+
+
 exports.getInsuranceById = async (req, res) => {
   const { insuranceId } = req.params;
   try {
@@ -27,7 +30,8 @@ exports.getInsuranceById = async (req, res) => {
   }
 };
 
-// Create a new insurance
+
+
 exports.createInsurance = async (req, res) => {
   const { type, name, status } = req.body;
   try {
@@ -39,7 +43,8 @@ exports.createInsurance = async (req, res) => {
   }
 };
 
-// Update an existing insurance
+
+
 exports.updateInsurance = async (req, res) => {
   const { insuranceId } = req.params;
   const { type, name, status } = req.body;
@@ -56,7 +61,8 @@ exports.updateInsurance = async (req, res) => {
   }
 };
 
-// Delete an insurance
+
+
 exports.deleteInsurance = async (req, res) => {
   const { insuranceId } = req.params;
   try {

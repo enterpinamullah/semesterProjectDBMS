@@ -1,7 +1,9 @@
-// Import the Practitioner model
+
+
 const { Practitioner } = require('../../models');
 
-// Get all practitioners
+
+
 exports.getAllPractitioners = async (req, res) => {
   try {
     const practitioners = await Practitioner.findAll();
@@ -12,7 +14,8 @@ exports.getAllPractitioners = async (req, res) => {
   }
 };
 
-// Get practitioner by ID
+
+
 exports.getPractitionerById = async (req, res) => {
   const { practitionerId } = req.params;
   try {
@@ -27,7 +30,8 @@ exports.getPractitionerById = async (req, res) => {
   }
 };
 
-// Create a new practitioner
+
+
 exports.createPractitioner = async (req, res) => {
   const { firstName, middleNames, lastName, telecomSystem, address, gender, birthDate, qualificationCode, languageCode } = req.body;
   try {
@@ -39,7 +43,8 @@ exports.createPractitioner = async (req, res) => {
   }
 };
 
-// Update an existing practitioner
+
+
 exports.updatePractitioner = async (req, res) => {
   const { practitionerId } = req.params;
   const { firstName, middleNames, lastName, telecomSystem, address, gender, birthDate, qualificationCode, languageCode } = req.body;
@@ -56,7 +61,8 @@ exports.updatePractitioner = async (req, res) => {
   }
 };
 
-// Delete a practitioner
+
+
 exports.deletePractitioner = async (req, res) => {
   const { practitionerId } = req.params;
   try {

@@ -1,7 +1,9 @@
-// Import the Claims model
+
+
 const { Claims } = require('../../models');
 
-// Get all claims
+
+
 exports.getAllClaims = async (req, res) => {
   try {
     const claims = await Claims.findAll();
@@ -12,7 +14,8 @@ exports.getAllClaims = async (req, res) => {
   }
 };
 
-// Get claim by ID
+
+
 exports.getClaimById = async (req, res) => {
   const { claimId } = req.params;
   try {
@@ -27,7 +30,8 @@ exports.getClaimById = async (req, res) => {
   }
 };
 
-// Create a new claim
+
+
 exports.createClaim = async (req, res) => {
   const { medicationRequestId, coverageId, claimDate, claimAmount, description, status } = req.body;
   try {
@@ -39,7 +43,8 @@ exports.createClaim = async (req, res) => {
   }
 };
 
-// Update an existing claim
+
+
 exports.updateClaim = async (req, res) => {
   const { claimId } = req.params;
   const { medicationRequestId, coverageId, claimDate, claimAmount, description, status } = req.body;
@@ -56,7 +61,8 @@ exports.updateClaim = async (req, res) => {
   }
 };
 
-// Get Claim by Coverage ID
+
+
 exports.getClaimByCoverageId = async (req, res) => {
   try {
     const { coverageId } = req.params;
@@ -67,7 +73,8 @@ exports.getClaimByCoverageId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Delete a claim
+
+
 exports.deleteClaim = async (req, res) => {
   const { claimId } = req.params;
   try {

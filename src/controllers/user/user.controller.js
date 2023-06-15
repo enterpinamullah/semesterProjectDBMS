@@ -50,7 +50,6 @@ export const register = async (req, res) => {
     };
 
     const newUser = await User.create(payload);
-    // create a six digit random number
     const randomNumber = Math.floor(100000 + Math.random() * 900000);
     const verificationCodePayload = {
       code_id: randomUUID(),

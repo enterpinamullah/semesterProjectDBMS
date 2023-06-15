@@ -1,7 +1,9 @@
-// Import the ObservationLaboratory model
+
+
 const { ObservationLaboratory } = require('../../models');
 
-// Get all laboratory observations
+
+
 exports.getAllLaboratory = async (req, res) => {
   try {
     const laboratory = await ObservationLaboratory.findAll();
@@ -11,7 +13,8 @@ exports.getAllLaboratory = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-// Get ObservationLaboratory by Patient ID
+
+
 exports.getLaboratoryByPatientId = async (req, res) => {
   try {
     const { patientId } = req.params;
@@ -22,7 +25,8 @@ exports.getLaboratoryByPatientId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Get laboratory observation by ID
+
+
 exports.getLaboratoryById = async (req, res) => {
   const { observationLaboratoryId } = req.params;
   try {
@@ -37,7 +41,8 @@ exports.getLaboratoryById = async (req, res) => {
   }
 };
 
-// Create a new laboratory observation
+
+
 exports.createLaboratory = async (req, res) => {
   const { patientId, testType, result, units, date } = req.body;
   try {
@@ -49,7 +54,8 @@ exports.createLaboratory = async (req, res) => {
   }
 };
 
-// Update an existing laboratory observation
+
+
 exports.updateLaboratory = async (req, res) => {
   const { observationLaboratoryId } = req.params;
   const { patientId, testType, result, units, date } = req.body;
@@ -66,7 +72,8 @@ exports.updateLaboratory = async (req, res) => {
   }
 };
 
-// Delete a laboratory observation
+
+
 exports.deleteLaboratory = async (req, res) => {
   const { observationLaboratoryId } = req.params;
   try {

@@ -1,7 +1,9 @@
-// Import the Coverage model
+
+
 const { Coverage } = require('../../models');
 
-// Get all coverages
+
+
 exports.getAllCoverages = async (req, res) => {
   try {
     const coverages = await Coverage.findAll();
@@ -11,7 +13,8 @@ exports.getAllCoverages = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-// Get Coverage by Patient ID
+
+
 exports.getCoverageByPatientId = async (req, res) => {
     try {
       const { patientId } = req.params;
@@ -22,7 +25,8 @@ exports.getCoverageByPatientId = async (req, res) => {
       res.status(500).json({ error: 'Internal server error' });
     }
   };
-// Get coverage by ID
+
+
 exports.getCoverageById = async (req, res) => {
   const { coverageId } = req.params;
   try {
@@ -37,7 +41,8 @@ exports.getCoverageById = async (req, res) => {
   }
 };
 
-// Create a new coverage
+
+
 exports.createCoverage = async (req, res) => {
   const { patientId, insuranceId, status, name } = req.body;
   try {
@@ -49,7 +54,8 @@ exports.createCoverage = async (req, res) => {
   }
 };
 
-// Update an existing coverage
+
+
 exports.updateCoverage = async (req, res) => {
   const { coverageId } = req.params;
   const { patientId, insuranceId, status, name } = req.body;
@@ -66,7 +72,8 @@ exports.updateCoverage = async (req, res) => {
   }
 };
 
-// Delete a coverage
+
+
 exports.deleteCoverage = async (req, res) => {
   const { patientId } = req.params;
   try {

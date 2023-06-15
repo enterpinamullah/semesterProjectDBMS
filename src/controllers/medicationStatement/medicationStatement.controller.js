@@ -1,7 +1,9 @@
-// Import the MedicationStatement model
+
+
 const { MedicationStatement } = require('../../models');
 
-// Get all medication statements
+
+
 exports.getAllMedicationStatements = async (req, res) => {
   try {
     const medicationStatements = await MedicationStatement.findAll();
@@ -12,7 +14,8 @@ exports.getAllMedicationStatements = async (req, res) => {
   }
 };
 
-// Get medication statement by ID
+
+
 exports.getMedicationStatementById = async (req, res) => {
   const { medicationStatementId } = req.params;
   try {
@@ -27,7 +30,8 @@ exports.getMedicationStatementById = async (req, res) => {
   }
 };
 
-// Create a new medication statement
+
+
 exports.createMedicationStatement = async (req, res) => {
   const { patientId, type, patientInstructions, date, status } = req.body;
   try {
@@ -39,7 +43,8 @@ exports.createMedicationStatement = async (req, res) => {
   }
 };
 
-// Update an existing medication statement
+
+
 exports.updateMedicationStatement = async (req, res) => {
   const { medicationStatementId } = req.params;
   const { patientId, type, patientInstructions, date, status } = req.body;
@@ -56,7 +61,8 @@ exports.updateMedicationStatement = async (req, res) => {
   }
 };
 
-// Delete a medication statement
+
+
 exports.deleteMedicationStatement = async (req, res) => {
   const { medicationStatementId } = req.params;
   try {

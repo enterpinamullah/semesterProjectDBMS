@@ -1,7 +1,9 @@
-// Import the MedicationRequest model
+
+
 const { MedicationRequest } = require('../../models');
 
-// Get all medication requests
+
+
 exports.getAllMedicationRequests = async (req, res) => {
   try {
     const medicationRequests = await MedicationRequest.findAll();
@@ -12,7 +14,8 @@ exports.getAllMedicationRequests = async (req, res) => {
   }
 };
 
-// Get MedicationRequest by Patient ID
+
+
 exports.getMedicationRequestByPatientId = async (req, res) => {
   try {
     const { patientId } = req.params;
@@ -23,7 +26,8 @@ exports.getMedicationRequestByPatientId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Get medication request by ID
+
+
 exports.getMedicationRequestById = async (req, res) => {
   const { medicationRequestId } = req.params;
   try {
@@ -38,7 +42,8 @@ exports.getMedicationRequestById = async (req, res) => {
   }
 };
 
-// Create a new medication request
+
+
 exports.createMedicationRequest = async (req, res) => {
   const { patientId, medication, dosage, startDate, endDate } = req.body;
   try {
@@ -50,7 +55,8 @@ exports.createMedicationRequest = async (req, res) => {
   }
 };
 
-// Update an existing medication request
+
+
 exports.updateMedicationRequest = async (req, res) => {
   const { medicationRequestId } = req.params;
   const { patientId, medication, dosage, startDate, endDate } = req.body;
@@ -67,7 +73,8 @@ exports.updateMedicationRequest = async (req, res) => {
   }
 };
 
-// Delete a medication request
+
+
 exports.deleteMedicationRequest = async (req, res) => {
   const { medicationRequestId } = req.params;
   try {

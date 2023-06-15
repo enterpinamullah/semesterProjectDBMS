@@ -1,7 +1,9 @@
-// Import the ObservationVitalSigns model
+
+
 const { ObservationVitalSigns } = require('../../models');
 
-// Get all vital signs observations
+
+
 exports.getAllVitalSigns = async (req, res) => {
   try {
     const vitalSigns = await ObservationVitalSigns.findAll();
@@ -12,7 +14,8 @@ exports.getAllVitalSigns = async (req, res) => {
   }
 };
 
-// Get ObservationVitalSigns by Patient ID
+
+
 exports.getVitalSignsByPatientId = async (req, res) => {
   try {
     const { patientId } = req.params;
@@ -23,7 +26,8 @@ exports.getVitalSignsByPatientId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Get vital signs observation by ID
+
+
 exports.getVitalSignsById = async (req, res) => {
   const { observationVitalSignsId } = req.params;
   try {
@@ -38,7 +42,8 @@ exports.getVitalSignsById = async (req, res) => {
   }
 };
 
-// Create a new vital signs observation
+
+
 exports.createVitalSigns = async (req, res) => {
   const { patientId, type, value, unit, date } = req.body;
   try {
@@ -50,7 +55,8 @@ exports.createVitalSigns = async (req, res) => {
   }
 };
 
-// Update an existing vital signs observation
+
+
 exports.updateVitalSigns = async (req, res) => {
   const { observationVitalSignsId } = req.params;
   const { patientId, type, value, unit, date } = req.body;
@@ -67,7 +73,8 @@ exports.updateVitalSigns = async (req, res) => {
   }
 };
 
-// Delete a vital signs observation
+
+
 exports.deleteVitalSigns = async (req, res) => {
   const { observationVitalSignsId } = req.params;
   try {

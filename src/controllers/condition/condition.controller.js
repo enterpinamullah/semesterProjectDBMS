@@ -1,7 +1,9 @@
-// Import the Condition model
+
+
 const { Condition } = require('../../models');
 
-// Get all conditions
+
+
 exports.getAllConditions = async (req, res) => {
   try {
     const conditions = await Condition.findAll();
@@ -11,7 +13,8 @@ exports.getAllConditions = async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-// Get Condition by Patient ID
+
+
 exports.getConditionByPatientId = async (req, res) => {
   try {
     const { patientId } = req.params;
@@ -22,7 +25,8 @@ exports.getConditionByPatientId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Get condition by ID
+
+
 exports.getConditionById = async (req, res) => {
   const { conditionId } = req.params;
   try {
@@ -37,7 +41,8 @@ exports.getConditionById = async (req, res) => {
   }
 };
 
-// Create a new condition
+
+
 exports.createCondition = async (req, res) => {
   const { patientId, category, type, clinicalStatus } = req.body;
   try {
@@ -49,7 +54,8 @@ exports.createCondition = async (req, res) => {
   }
 };
 
-// Update an existing condition
+
+
 exports.updateCondition = async (req, res) => {
   const { conditionId } = req.params;
   const { patientId, category, type, clinicalStatus } = req.body;
@@ -66,7 +72,8 @@ exports.updateCondition = async (req, res) => {
   }
 };
 
-// Delete a condition
+
+
 exports.deleteCondition = async (req, res) => {
   const { conditionId } = req.params;
   try {

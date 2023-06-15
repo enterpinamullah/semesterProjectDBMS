@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       patientId: {
         type: DataTypes.NUMERIC,
         allowNull: true,
+        unique: true,
         references: { model: 'Patient', key: 'patientId' },
       },
       firstName: {

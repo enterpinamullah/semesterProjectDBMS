@@ -5,8 +5,10 @@ import * as userController from '../controllers/user/user.controller';
 import * as userValidator from '../controllers/user/user.validator';
 
 const router = express.Router();
-//= ===============================
-// Public routes
+
+
+
+
 router.post(
     '/v1/login',
     validate(userValidator.login),
@@ -17,7 +19,8 @@ router.post(
   validate(userValidator.register),
   userController.register,
 );
-// validation for below routes to be done later
+
+
 router.post(
   '/v1/verifyRegistration',
   userController.verifyRegistration,
@@ -50,6 +53,7 @@ router.get(
 );
 
 
-//= ===============================
+
+
 
 module.exports = router;

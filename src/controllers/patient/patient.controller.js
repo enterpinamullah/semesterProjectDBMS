@@ -1,4 +1,5 @@
-// Import the Patient model
+
+
 const { Patient,
   ObservationVitalSigns,
   ObservationLaboratory,
@@ -10,7 +11,8 @@ const { Patient,
   MedicationRequest,
   Coverage} = require('../../models');
 
-// Get all patients
+
+
 exports.getAllPatients = async (req, res) => {
   try {
     const patients = await Patient.findAll();
@@ -21,7 +23,8 @@ exports.getAllPatients = async (req, res) => {
   }
 };
 
-// Get patient by ID
+
+
 exports.getPatientById = async (req, res) => {
   const { id } = req.params;
   try {
@@ -36,7 +39,8 @@ exports.getPatientById = async (req, res) => {
   }
 };
 
-// Create a new patient
+
+
 exports.createPatient = async (req, res) => {
   const { name, dob, cnic, telephone, email, address, insuranceId } = req.body;
   try {
@@ -48,7 +52,8 @@ exports.createPatient = async (req, res) => {
   }
 };
 
-// Update an existing patient
+
+
 exports.updatePatient = async (req, res) => {
   const { patientId } = req.params;
   const { name, dob, cnic, telephone, email, address, insuranceId } = req.body;
@@ -65,7 +70,8 @@ exports.updatePatient = async (req, res) => {
   }
 };
 
-// Delete a patient
+
+
 exports.deletePatient = async (req, res) => {
   const { patientId } = req.params;
   try {
@@ -81,12 +87,14 @@ exports.deletePatient = async (req, res) => {
   }
 };
 
-// Controller function to retrieve all resources linked to a patient
+
+
 exports.getPatientResources = async (req, res) => {
   const { patientId } = req.params;
 
   try {
-    // Find the patient by ID
+    
+
     const patient = await Patient.findOne({
       where: { patientId },
       include: [
@@ -107,7 +115,8 @@ exports.getPatientResources = async (req, res) => {
     }
 
 
-    // Return the linked resources
+    
+
     return res.json(patient.dataValues);
   } catch (error) {
     console.error(error);

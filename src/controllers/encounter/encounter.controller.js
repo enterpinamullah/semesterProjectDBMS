@@ -1,7 +1,9 @@
-// Import the Encounter model
+
+
 const { Encounter } = require('../../models');
 
-// Get all encounters
+
+
 exports.getAllEncounters = async (req, res) => {
   try {
     const encounters = await Encounter.findAll();
@@ -12,7 +14,8 @@ exports.getAllEncounters = async (req, res) => {
   }
 };
 
-// Get encounter by ID
+
+
 exports.getEncounterById = async (req, res) => {
   const { encounterId } = req.params;
   try {
@@ -27,7 +30,8 @@ exports.getEncounterById = async (req, res) => {
   }
 };
 
-// Create a new encounter
+
+
 exports.createEncounter = async (req, res) => {
   const { patientId, practitionerId, date, diagnosis,  type } = req.body;
   try {
@@ -39,7 +43,8 @@ exports.createEncounter = async (req, res) => {
   }
 };
 
-// Update an existing encounter
+
+
 exports.updateEncounter = async (req, res) => {
   const { encounterId } = req.params;
   const { patientId, practitionerId, date, diagnosis,  type } = req.body;
@@ -56,7 +61,8 @@ exports.updateEncounter = async (req, res) => {
   }
 };
 
-// Get Encounter by Patient ID
+
+
 exports.getEncounterByPatientId = async (req, res) => {
   try {
     const { patientId } = req.params;
@@ -67,7 +73,8 @@ exports.getEncounterByPatientId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Delete an encounter
+
+
 exports.deleteEncounter = async (req, res) => {
   const { encounterId } = req.params;
   try {

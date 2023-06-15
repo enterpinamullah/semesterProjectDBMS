@@ -1,7 +1,9 @@
-// Import the Immunization model
+
+
 const { Immunization } = require('../../models');
 
-// Get all immunizations
+
+
 exports.getAllImmunizations = async (req, res) => {
   try {
     const immunizations = await Immunization.findAll();
@@ -12,7 +14,8 @@ exports.getAllImmunizations = async (req, res) => {
   }
 };
 
-// Get immunization by ID
+
+
 exports.getImmunizationById = async (req, res) => {
   const { immunizationId } = req.params;
   try {
@@ -27,7 +30,8 @@ exports.getImmunizationById = async (req, res) => {
   }
 };
 
-// Create a new immunization
+
+
 exports.createImmunization = async (req, res) => {
   const { patientId, type, date, route, manufacturer, lotNumber, status } = req.body;
   try {
@@ -39,7 +43,8 @@ exports.createImmunization = async (req, res) => {
   }
 };
 
-// Update an existing immunization
+
+
 exports.updateImmunization = async (req, res) => {
   const { immunizationId } = req.params;
   const { patientId, type, date, route, manufacturer, lotNumber, status } = req.body;
@@ -56,7 +61,8 @@ exports.updateImmunization = async (req, res) => {
   }
 };
 
-// Get Immunization by Patient ID
+
+
 exports.getImmunizationByPatientId = async (req, res) => {
   try {
     const { patientId } = req.params;
@@ -67,7 +73,8 @@ exports.getImmunizationByPatientId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Delete an immunization
+
+
 exports.deleteImmunization = async (req, res) => {
   const { immunizationId } = req.params;
   try {

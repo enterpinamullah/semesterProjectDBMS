@@ -1,7 +1,9 @@
-// Import the AllergyIntolerance model
+
+
 const { AllergyIntolerance } = require('../../models');
 
-// Get all allergy intolerances
+
+
 exports.getAllAllergyIntolerances = async (req, res) => {
   try {
     const allergyIntolerances = await AllergyIntolerance.findAll();
@@ -12,7 +14,8 @@ exports.getAllAllergyIntolerances = async (req, res) => {
   }
 };
 
-// Get AllergyIntolerance by Patient ID
+
+
 exports.getAllergyByPatientId = async (req, res) => {
   try {
     const { patientId } = req.params;
@@ -23,7 +26,8 @@ exports.getAllergyByPatientId = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-// Get allergy intolerance by ID
+
+
 exports.getAllergyIntoleranceById = async (req, res) => {
   const { practitionerId } = req.params;
   try {
@@ -38,7 +42,8 @@ exports.getAllergyIntoleranceById = async (req, res) => {
   }
 };
 
-// Create a new allergy intolerance
+
+
 exports.createAllergyIntolerance = async (req, res) => {
   const { patientId, name, date, reaction, reactionOnsetDate } = req.body;
   try {
@@ -50,7 +55,8 @@ exports.createAllergyIntolerance = async (req, res) => {
   }
 };
 
-// Update an existing allergy intolerance
+
+
 exports.updateAllergyIntolerance = async (req, res) => {
   const { allergyIntoleranceId } = req.params;
   const { patientId, name, date, reaction, reactionOnsetDate } = req.body;
@@ -67,7 +73,8 @@ exports.updateAllergyIntolerance = async (req, res) => {
   }
 };
 
-// Delete an allergy intolerance
+
+
 exports.deleteAllergyIntolerance = async (req, res) => {
   const { allergyIntoleranceId } = req.params;
   try {
